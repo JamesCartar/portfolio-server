@@ -62,8 +62,8 @@ const sendEmail = async (req, res) => {
       port: 465,
       host: "smtp.gmail.com",
       auth: {
-          user: "arjunyadav.portfolio@gmail.com",
-          pass: "gpyuwxobhykouejh",
+          user: process.env.USER,
+          pass: process.env.PASS,
       },
       secure: true,
   });
@@ -82,8 +82,8 @@ const sendEmail = async (req, res) => {
   });
   
   const mailData = {
-      from: "arjunyadav.portfolio@gmail.com",
-      to: "arjunyadav.hash@gmail.com",
+      from: process.env.USER,
+      to: process.env.USER2,
       subject: `Contact From Portfolio`,
       html: `
       <!DOCTYPE html>
