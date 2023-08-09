@@ -8,8 +8,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: process.env.USER,
-    pass: process.env.PASS,
+    user: "arjunyadav.portfolio@gmail.com",
+    pass: "gpyuwxobhykouejh",
   },
 })
 
@@ -18,7 +18,7 @@ const sendEmail = async (req, res, next) => {
 
   let mailDetails = {
     from: 'arjunyadav.portfolio@gmail.com',
-    to: process.env.USER2,
+    to: "arjunyadav.hash@gmail.com",
     subject: 'Contact From Portfolio',
     html: `
     <!DOCTYPE html>
