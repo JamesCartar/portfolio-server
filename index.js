@@ -10,7 +10,7 @@ const sendEmailRouter = require('./routes/sendEmailRouter.js')
 const app = express();
 
 app.use(cors({
-    origin: ["https://hh-portfolio.vercel.app", 'http://localhost:3000', "https://octopus-app-b5cap.ondigitalocean.app/"],
+    origin: ["https://hh-portfolio.vercel.app", 'http://localhost:3000', "https://octopus-app-b5cap.ondigitalocean.app"],
     credentials: true,
 }));
 
