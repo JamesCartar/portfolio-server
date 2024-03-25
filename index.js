@@ -8,14 +8,23 @@ const sendEmailRouter = require("./routes/sendEmailRouter.js");
 
 const app = express();
 
+const allowedOrigins = [
+  "https://hh-portfolio.vercel.app",
+  "http://localhost:3000",
+  "https://www.heinhtet.me",
+  "https://heinhtet.me",
+];
+
 app.use(
   cors({
-    origin: [
-      "https://hh-portfolio.vercel.app",
-      "http://localhost:3000",
-      "https://www.heinhtet.me",
-      "https://heinhtet.me",
-    ],
+    origin: function (origin, callback) {
+      // Check if the origin is in the allowedOrigins array or if it's undefined (meaning it's not a cross-origin request)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
