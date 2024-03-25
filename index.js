@@ -13,8 +13,8 @@ app.use(
     origin: [
       "https://hh-portfolio.vercel.app",
       "http://localhost:3000",
-      "https://heinhtet.me",
       "https://www.heinhtet.me",
+      "https://heinhtet.me",
     ],
     credentials: true,
   })
